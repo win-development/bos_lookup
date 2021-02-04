@@ -13,6 +13,7 @@ let options = {
   apiKey: process.env.GOOGLE_API,
   formatter: null // 'gpx', 'string', ...
 };
+console.log(options.apiKey)
 
 let geoCoder = nodeGeocoder(options);
 
