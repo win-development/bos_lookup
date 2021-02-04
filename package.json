@@ -1,0 +1,23 @@
+{
+  "name": "bos_lookup",
+  "version": "0.0.1",
+  "description": "Find Wash Co BOS Member",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Lookup",
+    "BOS",
+    "Supervisor",
+    "Washington",
+    "County"
+  ],
+  "author": "win",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.6.3",
+    "node-geocoder": "^3.27.0",
+    "querystring": "^0.2.0"
+  }
+}

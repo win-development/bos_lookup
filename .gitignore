@@ -1,0 +1,9 @@
+.vercel
+.env
+.vscode
+.DS_Store
+*.html
+*.code-workspace
+*.txt
+api/dist/*
+node_modules/*
