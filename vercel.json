@@ -1,0 +1,12 @@
+{
+    "env": {
+        "MONGODB_URI": "@win-districts-mongodb-uri",
+        "GOOGLE_API": "@google_api"
+    },
+    "build": {
+        "env": {
+            "MONGODB_URI": "@win-districts-mongodb-uri",
+            "GOOGLE_API": "@google_api"
+        }
+    }
+}
