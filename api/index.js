@@ -8,14 +8,14 @@ const queryString = require('querystring');
 // Create cached connection variable
 let cachedDb = null
 // Set geocoding service
-let options = {
+const options = {
   provider: 'google',
   apiKey: process.env.GOOGLE_API,
   formatter: null // 'gpx', 'string', ...
 };
 console.log(options.apiKey)
 
-let geoCoder = nodeGeocoder(options);
+const geoCoder = nodeGeocoder(options);
 
 // A function for connecting to MongoDB,
 // taking a single parameter of the connection string
@@ -35,7 +35,7 @@ async function connectToDatabase(uri) {
   // Select the database through the connection,
   // using the database path of the connection string
 
-  let db_path = new URL(uri).pathname.substr(1)
+  const db_path = new URL(uri).pathname.substr(1)
   const db = client.db(db_path)
 
   // Cache the database connection and return the connection
@@ -44,7 +44,7 @@ async function connectToDatabase(uri) {
 }
 
 async function findCoordinates(streetAddress) {
-  let response = await geoCoder.geocode(streetAddress)
+  const response = await geoCoder.geocode(streetAddress)
   return response;
 };
 
@@ -57,13 +57,13 @@ function capitalizeName(name) {
 // The main, exported, function of the endpoint,
 // dealing with the request and subsequent response
 export default async (req, res) => {
-  var rawData = "";
+  let rawData = "";
   req.on('data', function (chunk) {
     rawData += chunk;
   });
   req.on('end', async function () {
-    let address = queryString.decode(rawData).address;
-    let location = await findCoordinates(address);
+    const address = queryString.decode(rawData).address;
+    const location = await findCoordinates(address);
     console.log({
       'location': location[0]
     })
